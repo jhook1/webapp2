@@ -21,7 +21,8 @@ const DeleteNote = (props)=>{
             open={open}
             trigger={
                 <Button 
-                    negative 
+                    color='red' 
+                    inverted={props.darkMode}
                     icon='trash' 
                     labelPosition='right' 
                     content='Delete'

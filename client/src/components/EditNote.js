@@ -51,7 +51,8 @@ const ReadNote = (props)=>{
             trigger={
                 <Button 
                     positive={!props.note.id}
-                    color='blue' 
+                    inverted={props.darkMode}
+                    color={props.note.id?'blue':'green'} 
                     icon={props.note.id?'edit':'plus'} 
                     labelPosition='left' 
                     content={props.note.id?'Edit':'New'}
