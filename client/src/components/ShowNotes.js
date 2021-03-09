@@ -21,7 +21,7 @@ const ShowNotes = (props)=>{
                         key={note.id} 
                         raised
                         style={props.darkMode?
-                            {'backgroundColor':'#222222','color':'white'}:
+                            {'backgroundColor':'#333333','color':'white'}:
                             {'backgroundColor':'white','color':'black'}
                         }
                     >

@@ -1,8 +1,8 @@
 import {useState} from 'react';
-import {Container,Segment,Button} from 'semantic-ui-react';
+import {Container,Segment} from 'semantic-ui-react';
 import ShowNotes from '../components/ShowNotes';
 import EditNote from '../components/EditNote';
-import './Home.css';
+import Footer from '../components/Footer';
 
 const Home = ()=>{
     const [update,setUpdate] = useState(false);
@@ -10,23 +10,15 @@ const Home = ()=>{
 
     return(
         <div className='ContainerWrapper'>
-            <Container fluid style={{'height':'100%','backgroundColor':'#222222'}}>
+            <Container fluid style={{'height':'100vh'}}>
                 <Segment.Group>
                     <ShowNotes update={update} setUpdate={setUpdate} darkMode={darkMode}/>
                     <Segment inverted={darkMode}>
                         <EditNote note={{title:'',body:''}} update={update} setUpdate={setUpdate} darkMode={darkMode}/>
                     </Segment>
-                    <Segment inverted={darkMode}>
-                        <Button 
-                            inverted={darkMode}
-                            icon='sun' 
-                            color='yellow'
-                            onClick={()=>{setDarkMode(!darkMode)}} 
-                            content='Toggle Dark Mode'
-                        />
-                    </Segment>
                 </Segment.Group>
             </Container>
+            <Footer darkMode={darkMode} setDarkMode={setDarkMode}/>
         </div>
     );
 }
